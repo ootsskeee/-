@@ -1,0 +1,3 @@
+﻿  3.1.cpp
+D:\BSU\1 курс\2 сем\С++\consoleapp\3.1\3.1.cpp(80,19): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  3.1.vcxproj -> D:\BSU\1 курс\2 сем\С++\consoleapp\Debug\3.1.exe
