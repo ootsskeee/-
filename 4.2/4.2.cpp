@@ -14,7 +14,7 @@ private:
 
 public:
     // конструктор по умолчанию 
-    Student() : name("Иванов Иван Иванович"),
+    Student() : name("Ivanov Ivan Ivanovich"),
         age(18),
         course(1),
         pol(true),
@@ -51,6 +51,7 @@ public:
         other.core = 0;
     }
 
+    // оператор копирующего присваивания
     Student& operator=(const Student& other) {
         if (this != &other) { // проверка на самоприсваивание
             name = other.name;
@@ -62,6 +63,8 @@ public:
         return *this;
     }
 
+
+    // оператор перемещающего присваивания
     Student& operator=(Student&& other) noexcept {
         if (this != &other) {
             name = move(other.name);
@@ -81,7 +84,7 @@ public:
     ~Student() = default;
 
     void ReadFromKeyboard() { // заполнение полей с клавиатуры
-        cout << "\nВведите ФИО студента: ";
+        cout << "\nВведите FIO студента: ";
         cin.ignore(); // сбрасываем буфер ввода
         getline(cin, name); // считываем строку имени
 
@@ -156,7 +159,7 @@ int main() {
 
     for (int i = 0; i < count; ++i) {
         cout << "\nСтудент " << i + 1 << ":" << endl;
-        students[i].ReadFromKeyboard();
+        students[i].ReadFromKeyboard();  // vvod info about student
     }
 
     // сохранение студентов в файл
@@ -187,7 +190,7 @@ int main() {
     for (int i = 0; i < count; ++i) {
         if (students[i].GetCourse() == course) { // на том ли курсе студетн? 
             totalCore += students[i].GetCore(); // если на нужном курсе, то его ср. балл учитывется 
-            ++numStudentsOnCourse; 
+            ++numStudentsOnCourse;
         }
     }
 
